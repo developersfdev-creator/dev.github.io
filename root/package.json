@@ -1,0 +1,39 @@
+{
+  "name": "ai-ml-portfolio",
+  "version": "1.0.0",
+  "description": "Professional portfolio website for AI/ML Engineer with 6+ years of experience",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server .",
+    "build": "echo 'No build process needed for static site'",
+    "deploy": "echo 'Deploy to GitHub Pages via repository settings'"
+  },
+  "keywords": [
+    "portfolio",
+    "ai",
+    "ml",
+    "machine-learning",
+    "artificial-intelligence",
+    "engineer",
+    "resume",
+    "cv",
+    "github-pages"
+  ],
+  "author": "Alex Chen <alex.chen@email.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ai-ml-portfolio.git"
+  },
+  "homepage": "https://yourusername.github.io/ai-ml-portfolio",
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.2.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
