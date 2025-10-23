@@ -276,9 +276,21 @@ body {
     background-clip: text;
 }
 
+/* Section Styles */
+.less-bottom-section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 /* About Section */
 .about {
-    padding: 6rem 0;
+    padding: 3rem 0;
     background: var(--bg-secondary);
 }
 
@@ -323,7 +335,7 @@ body {
 
 /* Experience Section */
 .experience {
-    padding: 6rem 0;
+    padding: 3rem 0 6rem 0;
 }
 
 .timeline {
@@ -412,7 +424,7 @@ body {
 
 /* Projects Section */
 .projects {
-    padding: 6rem 0;
+    padding: 3rem 0 6rem 0;
     background: var(--bg-secondary);
 }
 
@@ -498,7 +510,7 @@ body {
 
 /* Skills Section */
 .skills {
-    padding: 6rem 0;
+    padding: 3rem 0 6rem 0;
 }
 
 .skills-grid {
@@ -550,7 +562,7 @@ body {
 
 /* Education Section */
 .education {
-    padding: 6rem 0;
+    padding: 3rem 0 6rem 0;
 }
 
 .education-grid {
@@ -635,7 +647,7 @@ body {
 
 /* Certification Section */
 .certification {
-    padding: 6rem 0;
+    padding: 3rem 0 6rem 0;
     background: var(--bg-secondary);
 }
 
@@ -700,8 +712,9 @@ body {
 
 /* Publications Section */
 .publications {
-    padding: 6rem 0;
+    padding: 4rem 0 6rem 0;
     background: var(--bg-secondary);
+    min-height: 100vh;
 }
 
 .publications-grid {
@@ -837,7 +850,7 @@ body {
 
 /* Contact Section */
 .contact {
-    padding: 6rem 0;
+    padding: 3rem 0;
     background: var(--bg-secondary);
 }
 

@@ -151,9 +151,11 @@ function downloadResume() {
             window.URL.revokeObjectURL(blobUrl);
             
             // Show notification
+            showNotification('Resume download started!', 'success');
         })
         .catch(error => {
             console.error('Download error:', error);
+            showNotification('Failed to download resume', 'error');
         });
 }
 
