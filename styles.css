@@ -1231,6 +1231,17 @@ body {
 
     .contact-details-grid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 0 1rem;
+    }
+
+    .contact-card {
+        margin: 0 0.5rem;
+        padding: 1.5rem;
+    }
+
+    .contact {
+        padding: 3rem 1rem;
     }
 
     .social-links {
@@ -1276,6 +1287,20 @@ body {
         width: 150px;
         height: 150px;
         font-size: 3rem;
+    }
+
+    .contact-details-grid {
+        margin: 0 0.5rem;
+        gap: 1rem;
+    }
+
+    .contact-card {
+        margin: 0;
+        padding: 1rem;
+    }
+
+    .contact {
+        padding: 2rem 0.5rem;
     }
 }
 
