@@ -55,7 +55,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Add fade-in class to elements and observe them
-const fadeElements = document.querySelectorAll('.about, .experience, .projects, .skills, .contact');
+const fadeElements = document.querySelectorAll('.about, .skills, .experience, .education, .certification, .projects, .resume, .contact');
 fadeElements.forEach(el => {
     el.classList.add('fade-in');
     observer.observe(el);
@@ -97,13 +97,14 @@ function typeWriter(element, text, speed = 100) {
 
 // Initialize typing animation when page loads
 window.addEventListener('load', () => {
-    const heroTitle = document.querySelector('.hero-title');
-    if (heroTitle) {
-        const originalText = heroTitle.innerHTML;
-        setTimeout(() => {
-            typeWriter(heroTitle, originalText, 50);
-        }, 500);
-    }
+    // Typing animation disabled to preserve HTML structure
+    // const heroTitle = document.querySelector('.hero-title');
+    // if (heroTitle) {
+    //     const originalText = heroTitle.innerHTML;
+    //     setTimeout(() => {
+    //         typeWriter(heroTitle, originalText, 50);
+    //     }, 500);
+    // }
 });
 
 // Parallax effect for hero section
@@ -119,34 +120,51 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Contact form handling
-const contactForm = document.querySelector('.contact-form');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(this);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const subject = formData.get('subject');
-        const message = formData.get('message');
-        
-        // Simple validation
-        if (!name || !email || !subject || !message) {
-            showNotification('Please fill in all fields', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showNotification('Please enter a valid email address', 'error');
-            return;
-        }
-        
-        // Simulate form submission
-        showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-        this.reset();
-    });
+// Resume functions
+// function downloadResume() {
+//     // Show notification - the actual download is handled by the HTML download attribute
+//     showNotification('Resume download started!', 'success');
+//     downloadResumeNow();
+    
+// }
+
+
+function downloadResume() {
+    // Fetch the PDF and create a blob
+    fetch('Dinesh_Kothandaraman_Resume.pdf')
+        .then(response => response.blob())
+        .then(blob => {
+            // Create a blob URL
+            const blobUrl = window.URL.createObjectURL(blob);
+            
+            // Create a temporary anchor element
+            const link = document.createElement('a');
+            link.href = blobUrl;
+            link.download = 'Dinesh_Kothandaraman_Resume.pdf';
+            
+            // Append to body, click, and remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Clean up the blob URL
+            window.URL.revokeObjectURL(blobUrl);
+            
+            // Show notification
+            showNotification('Resume download started!', 'success');
+        })
+        .catch(error => {
+            console.error('Download error:', error);
+            showNotification('Failed to download resume', 'error');
+        });
+}
+
+
+
+function viewResume() {
+    // Open the resume in a new tab
+    window.open('Dinesh_Kothandaraman_Resume.pdf', '_blank');
+    showNotification('Opening resume in new tab...', 'info');
 }
 
 // Email validation
@@ -417,7 +435,7 @@ document.querySelectorAll('.btn').forEach(btn => {
 
 // Initialize AOS (Animate On Scroll) alternative
 function initScrollAnimations() {
-    const animatedElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category, .stat');
+    const animatedElements = document.querySelectorAll('.timeline-item, .project-card, .skill-category, .stat, .education-card, .cert-card, .publication-card, .contact-card');
     
     const animationObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
@@ -445,5 +463,5 @@ document.addEventListener('DOMContentLoaded', initScrollAnimations);
 const currentYear = new Date().getFullYear();
 const footerText = document.querySelector('.footer-content p');
 if (footerText) {
-    footerText.textContent = `© ${currentYear} Alex Chen. All rights reserved.`;
+    footerText.textContent = `© ${currentYear} Dinesh Kothandaraman. All rights reserved.`;
 }
