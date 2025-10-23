@@ -151,11 +151,9 @@ function downloadResume() {
             window.URL.revokeObjectURL(blobUrl);
             
             // Show notification
-            showNotification('Resume download started!', 'success');
         })
         .catch(error => {
             console.error('Download error:', error);
-            showNotification('Failed to download resume', 'error');
         });
 }
 
@@ -164,7 +162,6 @@ function downloadResume() {
 function viewResume() {
     // Open the resume in a new tab
     window.open('Dinesh_Kothandaraman_Resume.pdf', '_blank');
-    showNotification('Opening resume in new tab...', 'info');
 }
 
 // Email validation
