@@ -298,6 +298,22 @@ body {
     box-shadow: var(--shadow-xl);
 }
 
+.avatar-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: var(--shadow-xl), var(--glow);
+    border: 4px solid var(--primary-color);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.avatar-image:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-xl), 0 0 30px rgba(102, 126, 234, 0.5);
+}
+
 /* Section Styles */
 .section-title {
     font-size: 2.8rem;
@@ -1160,6 +1176,11 @@ body {
         font-size: 4rem;
     }
 
+    .avatar-image {
+        width: 200px;
+        height: 200px;
+    }
+
     .about-stats {
         grid-template-columns: 1fr;
     }
@@ -1287,6 +1308,11 @@ body {
         width: 150px;
         height: 150px;
         font-size: 3rem;
+    }
+
+    .avatar-image {
+        width: 150px;
+        height: 150px;
     }
 
     .contact-details-grid {
